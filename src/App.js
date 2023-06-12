@@ -1,4 +1,4 @@
-import "./App.css";
+// import "./App.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
@@ -10,7 +10,7 @@ import { faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 
 export default function App() {
   const [password, setPassword] = useState("Password Generator");
-  const [star, setStar] = useState("text");
+  const [inputType, setInputType] = useState("text");
   const [eye, setEye] = useState(
     <FontAwesomeIcon
       icon={faEye}
@@ -27,7 +27,7 @@ export default function App() {
         title="Show password"
       />
     );
-    setStar("password");
+    setInputType("password");
   }
   function showPass() {
     setEye(
@@ -37,7 +37,7 @@ export default function App() {
         title="Hide password"
       />
     );
-    setStar("text");
+    setInputType("text");
   }
 
   function generatePass() {
@@ -58,21 +58,23 @@ export default function App() {
   }
 
   return (
-    <div>
-      <input
-        type={star}
-        value={password}
-        readOnly
-        className="text-xl px-4 lg:w-2/5 sm:w-3/5 h-20 shadow-lg absolute left-2/4 top-2/4 rounded-xl select-none outline-none -translate-y-2/4 -translate-x-2/4"
-      />
-      <div className="icons absolute left-2/4 bottom-1/3 sm:-translate-y-24 lg:translate-x-28 sm:translate-x-24  -translate-x-16">
-        <button className="text-2xl p-1">{eye}</button>
-        <button className="text-2xl p-1" onClick={generatePass}>
-          <FontAwesomeIcon icon={faRotate} title="Create Password" />
-        </button>
-        <button className="text-2xl p-1" onClick={copyPass}>
-          <FontAwesomeIcon icon={faClipboard} title="Copy to clipboard" />
-        </button>
+    <div className="h-screen flex justify-center items-center">
+      <div className="flex flex-wrap justify-center items-center lg:w-2/5 sm:w-3/5 h-20 shadow-lg rounded-xl">
+        <input
+          type={inputType}
+          value={password}
+          readOnly
+          className="text-xl px-4 select-none outline-none bg-transparent"
+        />
+        <div className="icons">
+          <button className="text-2xl p-1">{eye}</button>
+          <button className="text-2xl p-1" onClick={generatePass}>
+            <FontAwesomeIcon icon={faRotate} title="Create Password" />
+          </button>
+          <button className="text-2xl p-1" onClick={copyPass}>
+            <FontAwesomeIcon icon={faClipboard} title="Copy to clipboard" />
+          </button>
+        </div>
       </div>
       <ToastContainer />
     </div>
