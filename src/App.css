@@ -1,0 +1,56 @@
+input {
+  font-size: 20px;
+  color: black;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 450px;
+  height: 70px;
+  box-shadow: 0px 80px 190px 1px rgb(147, 144, 144);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 11px;
+  border: none;
+  user-select: none;
+  outline: none;
+}
+.icons {
+  position: absolute;
+  top: 48.5%;
+  left: 57.2%;
+}
+button {
+  font-size: 20px;
+  border: 0px;
+  background-color: transparent;
+  cursor: pointer;
+}
+@media (max-width: 1300px) {
+  .icons {
+    left: 60.3%;
+  }
+}
+@media (max-width: 900px) {
+  .icons {
+    left: 64.9%;
+  }
+}
+@media (max-width: 600px) {
+  .icons {
+    left: 72%;
+  }
+}
+@media (max-width: 455px) {
+  .icons {
+    top: 60%;
+    left: 35%;
+  }
+  button {
+    font-size: 25px;
+  }
+  input {
+    width: 300px;
+    height: 70px;
+  }
+}
